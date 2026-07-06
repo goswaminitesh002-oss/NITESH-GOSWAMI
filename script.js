@@ -32,53 +32,6 @@ function createFloatingHearts() {
     }, 300);
 }
 
-// Update floating hearts to include horizontal drift
-const style = document.createElement('style');
-style.textContent = `
-    .heart {
-        --drift: 0px;
-    }
-    
-    @keyframes floatHeart {
-        0% {
-            transform: translateY(100vh) translateX(0) scale(0.5) rotate(0deg);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-100px) translateX(var(--drift)) scale(1.3) rotate(360deg);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// ============================================
-// TYPING ANIMATION
-// ============================================
-function startTypingAnimation() {
-    const typingElement = document.getElementById('typing');
-    const textToType = 'Your love means everything to me...';
-    let index = 0;
-    
-    function type() {
-        if (index < textToType.length) {
-            typingElement.textContent += textToType.charAt(index);
-            index++;
-            setTimeout(type, 100);
-        }
-    }
-    
-    // Clear existing text
-    typingElement.textContent = '';
-    type();
-}
-
 // ============================================
 // SCROLL TO LETTER
 // ============================================
@@ -163,7 +116,7 @@ function createBurstEffect(x, y) {
 // CONFETTI EFFECT
 // ============================================
 function triggerConfetti() {
-    const colors = ['#ff2d75', '#ffc0cb', '#ff69b4', '#ff1493', '#ff69b4'];
+    const colors = ['#ff4d88', '#ff7eb3', '#ff2d75', '#e91e63', '#ff69b4'];
     const confettiCount = 50;
     
     for (let i = 0; i < confettiCount; i++) {
@@ -215,7 +168,7 @@ function showSuccessMessage() {
     message.style.top = '50%';
     message.style.left = '50%';
     message.style.transform = 'translate(-50%, -50%)';
-    message.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    message.style.backgroundColor = 'rgba(233, 30, 99, 0.9)';
     message.style.color = '#fff';
     message.style.padding = '20px 40px';
     message.style.borderRadius = '50px';
@@ -262,23 +215,11 @@ messageStyle.textContent = `
 document.head.appendChild(messageStyle);
 
 // ============================================
-// MUSIC CONTROL
+// OPEN SPOTIFY SONG
 // ============================================
-function toggleMusic() {
-    const audio = document.getElementById('bgMusic');
-    const button = document.getElementById('musicBtn');
-    
-    if (audio.paused) {
-        audio.play().catch(() => {
-            alert('Music file not found. Please add music.mp3 to your project folder.');
-        });
-        button.innerHTML = '<i class="fas fa-pause"></i> Pause Music';
-        button.classList.add('playing');
-    } else {
-        audio.pause();
-        button.innerHTML = '<i class="fas fa-play"></i> Play Music';
-        button.classList.remove('playing');
-    }
+function openSpotify() {
+    const spotifyUrl = 'https://open.spotify.com/track/2cz4qH4fCauVA93JHkUMad';
+    window.open(spotifyUrl, '_blank');
 }
 
 // ============================================
@@ -341,18 +282,6 @@ function setupScrollAnimations() {
     document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
     });
-    
-    // Observe all cards
-    document.querySelectorAll('.card').forEach((card, index) => {
-        card.style.animation = `fadeUp 0.8s ease-out ${index * 0.1}s backwards`;
-        observer.observe(card);
-    });
-    
-    // Observe all photos
-    document.querySelectorAll('.photo').forEach((photo, index) => {
-        photo.style.animation = `fadeUp 0.8s ease-out ${index * 0.1}s backwards`;
-        observer.observe(photo);
-    });
 }
 
 // ============================================
@@ -362,42 +291,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize floating hearts
     createFloatingHearts();
     
-    // Start typing animation
-    startTypingAnimation();
-    
     // Setup scroll animations
     setupScrollAnimations();
     
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     
-    // Prevent music from playing on load (browsers require user interaction)
-    const audio = document.getElementById('bgMusic');
-    audio.muted = false;
-    
     console.log('✨ Sorry Shri ❤️ - Website Loaded ✨');
-});
-
-// ============================================
-// RESIZE HANDLER FOR RESPONSIVE DESIGN
-// ============================================
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        console.log('Window resized');
-    }, 250);
 });
 
 // ============================================
 // KEYBOARD SHORTCUTS
 // ============================================
 document.addEventListener('keydown', (e) => {
-    // Press 'M' to toggle music
-    if (e.key.toLowerCase() === 'm') {
-        toggleMusic();
-    }
-    
     // Press 'H' to scroll to hero
     if (e.key.toLowerCase() === 'h') {
         document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
@@ -407,27 +313,9 @@ document.addEventListener('keydown', (e) => {
     if (e.key.toLowerCase() === 'l') {
         scrollToLetter();
     }
-});
-
-// ============================================
-// EASTER EGG
-// ============================================
-let easterEggCode = [];
-const secretCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'];
-
-document.addEventListener('keydown', (e) => {
-    easterEggCode.push(e.key);
-    easterEggCode = easterEggCode.slice(-secretCode.length);
     
-    if (easterEggCode.join(',') === secretCode.join(',')) {
-        activateEasterEgg();
+    // Press 'M' to open Spotify
+    if (e.key.toLowerCase() === 'm') {
+        openSpotify();
     }
 });
-
-function activateEasterEgg() {
-    document.body.style.filter = 'hue-rotate(45deg)';
-    alert('🎉 You found the easter egg! 🎉\n\nYour love is magical! ✨💕');
-    setTimeout(() => {
-        document.body.style.filter = 'hue-rotate(0deg)';
-    }, 3000);
-}
