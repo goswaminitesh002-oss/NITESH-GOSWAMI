@@ -1,245 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio of [Your Name] — web developer, designer, builder." />
-  <title>[Your Name] — Portfolio</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Primary stylesheet -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Favicon (optional) -->
-  <link rel="icon" href="data:;base64,=">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Shri ❤️</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-  <!-- Header / Navigation -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#home">YourName</a>
+    <!-- Floating Hearts Background -->
+    <div id="hearts"></div>
+    
+    <!-- Animated Background -->
+    <div class="background-animation"></div>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-      </button>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="glass">
+            <h1 class="fade-in">Sorry Shri ❤️</h1>
+            <h2 id="typing" class="typing-text"></h2>
+            
+            <p class="intro fade-in-delay">
+                I know I made mistakes...<br>
+                But every heartbeat reminds me how important you are.
+            </p>
 
-      <nav id="primary-navigation" class="primary-nav" data-visible="false">
-        <ul class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <h1>Hi, I'm <span class="accent">Your Name</span></h1>
-          <p class="lead">I build beautiful, performant web experiences — from design to deployment.</p>
-          <div class="hero-ctas">
-            <a class="btn primary" href="#projects">See Projects</a>
-            <a class="btn ghost" href="#contact">Hire Me</a>
-          </div>
-          <ul class="quick-info">
-            <li>Available for freelance</li>
-            <li>Open to remote roles</li>
-          </ul>
+            <button class="btn btn-primary" onclick="scrollToLetter()">
+                Read My Heart 💌
+            </button>
         </div>
-
-        <div class="hero-visual reveal">
-          <div class="mockup">
-            <!-- Simple decorative mockup -->
-            <svg viewBox="0 0 400 300" aria-hidden="true" class="mockup-svg">
-              <rect x="8" y="8" width="384" height="284" rx="12" fill="#0f1724" opacity="0.9"/>
-              <rect x="28" y="28" width="344" height="40" rx="6" fill="#ffffff" opacity="0.06"/>
-              <rect x="28" y="80" width="344" height="160" rx="6" fill="#ffffff" opacity="0.04"/>
-            </svg>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="about section container">
-      <div class="about-grid">
-        <div class="about-img reveal" aria-hidden="true">
-          <div class="photo" role="img" aria-label="Portrait placeholder"></div>
+    <!-- LETTER SECTION -->
+    <section class="letter" id="letter">
+        <div class="glass">
+            <h2>💌 My Letter To You</h2>
+            
+            <p>Dear Shri,</p>
+
+            <p>
+                I never wanted to hurt you.<br>
+                If my words or actions made you cry,<br>
+                I'm truly sorry from the bottom of my heart.
+            </p>
+
+            <p>
+                You deserve happiness,<br>
+                respect,<br>
+                love,<br>
+                and peace.<br>
+                I know I failed to give you that for a moment,<br>
+                and I regret it every single day.
+            </p>
+
+            <p>
+                If I could go back,<br>
+                I'd fix every mistake.<br>
+                But today all I can do is ask...
+            </p>
+
+            <h3 class="question">❤️ Will You Forgive Me? ❤️</h3>
+
+            <button class="btn btn-primary btn-large" onclick="forgive()">
+                Forgive Me ❤️
+            </button>
         </div>
-        <div class="about-content reveal">
-          <h2>About Me</h2>
-          <p>I'm a front-end developer specializing in modern web applications. I care about performance, accessibility, and delightful UI. I enjoy turning complex problems into simple, beautiful, and intuitive designs.</p>
-          <p>When I'm not coding, you'll find me sketching UIs, exploring open-source projects, or learning the latest in web tech.</p>
-          <a class="btn" href="#contact">Let's talk</a>
-        </div>
-      </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="skills section container">
-      <h2 class="section-title reveal">Skills</h2>
-      <p class="section-subtitle reveal">Technologies and tools I use often</p>
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <h3>HTML</h3>
-          <div class="progress"><span style="--value:95%">95%</span></div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>CSS</h3>
-          <div class="progress"><span style="--value:92%">92%</span></div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>JavaScript</h3>
-          <div class="progress"><span style="--value:90%">90%</span></div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>React</h3>
-          <div class="progress"><span style="--value:85%">85%</span></div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Node.js</h3>
-          <div class="progress"><span style="--value:78%">78%</span></div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Design</h3>
-          <div class="progress"><span style="--value:80%">80%</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="projects section container">
-      <h2 class="section-title reveal">Projects</h2>
-      <p class="section-subtitle reveal">Selected work — click a card for details</p>
-
-      <div class="projects-grid">
-        <!-- Project card 1 -->
-        <article class="project-card reveal" data-title="Project One" data-desc="A modern single-page app with smooth animations and responsive layouts." data-tech="HTML, CSS, JS" data-link="#">
-          <div class="project-media">
-            <img alt="Project One screenshot" src="https://via.placeholder.com/800x450.png?text=Project+1">
-          </div>
-          <div class="project-body">
-            <h3>Project One</h3>
-            <p class="muted">HTML • CSS • JavaScript</p>
-            <div class="card-actions">
-              <button class="btn small view-project">View</button>
-              <a class="link" href="#" aria-label="Open project one in new tab">Live</a>
+    <!-- PROMISES SECTION -->
+    <section class="promises" id="promises">
+        <h2>🌹 My Promises</h2>
+        
+        <div class="cards">
+            <div class="card card-1">
+                <div class="card-emoji">❤️</div>
+                <h3>Respect</h3>
+                <p>I'll always respect your feelings and emotions.</p>
             </div>
-          </div>
-        </article>
 
-        <!-- Project card 2 -->
-        <article class="project-card reveal" data-title="Project Two" data-desc="E-commerce prototype with animations and cart microinteractions." data-tech="React, Node.js" data-link="#">
-          <div class="project-media">
-            <img alt="Project Two screenshot" src="https://via.placeholder.com/800x450.png?text=Project+2">
-          </div>
-          <div class="project-body">
-            <h3>Project Two</h3>
-            <p class="muted">React • Node • UX</p>
-            <div class="card-actions">
-              <button class="btn small view-project">View</button>
-              <a class="link" href="#" aria-label="Open project two in new tab">Live</a>
+            <div class="card card-2">
+                <div class="card-emoji">🌸</div>
+                <h3>Care</h3>
+                <p>I'll always stand beside you through thick and thin.</p>
             </div>
-          </div>
-        </article>
 
-        <!-- Project card 3 -->
-        <article class="project-card reveal" data-title="Project Three" data-desc="A performance-focused blog platform with markdown support and SEO optimizations." data-tech="Gatsby / Static" data-link="#">
-          <div class="project-media">
-            <img alt="Project Three screenshot" src="https://via.placeholder.com/800x450.png?text=Project+3">
-          </div>
-          <div class="project-body">
-            <h3>Project Three</h3>
-            <p class="muted">Static • SEO</p>
-            <div class="card-actions">
-              <button class="btn small view-project">View</button>
-              <a class="link" href="#" aria-label="Open project three in new tab">Live</a>
+            <div class="card card-3">
+                <div class="card-emoji">💖</div>
+                <h3>Love</h3>
+                <p>My love for you will never fade away.</p>
             </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Project Modal -->
-    <div id="project-modal" class="modal" aria-hidden="true">
-      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal-close" aria-label="Close project details">&times;</button>
-        <h3 id="modal-title"></h3>
-        <p id="modal-tech" class="muted"></p>
-        <p id="modal-desc"></p>
-        <div class="modal-actions">
-          <a id="modal-live" class="btn" href="#" target="_blank" rel="noopener">Open Live</a>
         </div>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <section id="contact" class="contact section container">
-      <h2 class="section-title reveal">Contact</h2>
-      <p class="section-subtitle reveal">Have a project or just want to say hi? Fill the form — I usually reply within 48 hours.</p>
-
-      <div class="contact-grid reveal">
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contact-form">
-          <!-- Netlify form hidden input -->
-          <input type="hidden" name="form-name" value="contact">
-          <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field"></label></p>
-
-          <label>
-            <span>Your name</span>
-            <input type="text" name="name" required>
-          </label>
-
-          <label>
-            <span>Your email</span>
-            <input type="email" name="email" required>
-          </label>
-
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="6" required></textarea>
-          </label>
-
-          <div class="form-actions">
-            <button class="btn primary" type="submit">Send message</button>
-            <button class="btn ghost" type="reset">Reset</button>
-          </div>
-
-          <p id="form-status" aria-live="polite"></p>
-        </form>
-
-        <aside class="contact-info">
-          <h3>Other ways to reach me</h3>
-          <p class="muted">Email: <a href="mailto:you@example.com">you@example.com</a></p>
-          <p class="muted">Location: Remote</p>
-          <div class="socials">
-            <a href="#" aria-label="GitHub profile">GitHub</a>
-            <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
-            <a href="#" aria-label="Twitter profile">Twitter</a>
-          </div>
-        </aside>
-      </div>
     </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Your Name — Built with ❤️ & JavaScript</p>
-      <nav class="foot-nav">
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </footer>
+    <!-- GALLERY SECTION -->
+    <section class="gallery" id="gallery">
+        <h2>📸 Our Memories</h2>
+        
+        <div class="photos">
+            <div class="photo photo-1">
+                <i class="fas fa-image"></i>
+                <span>Memory 1</span>
+            </div>
+            <div class="photo photo-2">
+                <i class="fas fa-image"></i>
+                <span>Memory 2</span>
+            </div>
+            <div class="photo photo-3">
+                <i class="fas fa-image"></i>
+                <span>Memory 3</span>
+            </div>
+            <div class="photo photo-4">
+                <i class="fas fa-image"></i>
+                <span>Memory 4</span>
+            </div>
+        </div>
+    </section>
 
-  <!-- Scripts -->
-  <script src="script.js" defer></script>
+    <!-- MUSIC SECTION -->
+    <section class="music" id="music">
+        <h2>🎵 Our Song</h2>
+        
+        <button class="btn btn-secondary" id="musicBtn" onclick="toggleMusic()">
+            <i class="fas fa-play"></i> Play Music
+        </button>
+        
+        <audio id="bgMusic" loop>
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+
+    <!-- WHATSAPP SECTION -->
+    <section class="reply" id="reply">
+        <a href="https://wa.me/917223050328" target="_blank" rel="noopener noreferrer">
+            <button class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Reply On WhatsApp
+            </button>
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Made with ❤️ by Nitesh</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
