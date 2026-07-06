@@ -412,22 +412,17 @@ section {
     margin-bottom: 40px;
 }
 
-#musicBtn {
-    font-size: 18px;
+.spotify-container {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
 }
 
-#musicBtn i {
-    margin-right: 8px;
-    transition: all 0.3s ease;
-}
-
-#musicBtn.playing i {
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.spotify-container iframe {
+    max-width: 100%;
+    width: 100%;
 }
 
 /* WhatsApp Section */
@@ -618,6 +613,10 @@ footer p {
         padding: 60px 15px;
     }
 
+    .spotify-container {
+        padding: 0 10px;
+    }
+
     .reply {
         padding: 40px 15px;
     }
@@ -664,6 +663,18 @@ footer p {
 
     .photo {
         height: 150px;
+    }
+
+    .music {
+        padding: 60px 15px;
+    }
+
+    .spotify-container {
+        padding: 0 5px;
+    }
+
+    .spotify-container iframe {
+        height: 152px;
     }
 
     footer {
